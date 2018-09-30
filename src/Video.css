@@ -3,7 +3,7 @@
     position: relative;
     background: black;
     color: #5b5b5b;
-    flex-basis: 25%;
+    width: 100%;
     transition: all .2s ease-in;
     display: flex;
     justify-content: center;
@@ -11,10 +11,13 @@
 
 }
 .item.video {
+    height: 0;
+    padding-top: 56.25%;
     font-weight: 700;
     font-size: 30px;
     color: white;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     opacity: .3;
     cursor: pointer;
 }
@@ -26,4 +29,15 @@
 }
 .item.video:hover span {
     opacity: 1;
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+    .item {
+        flex-basis: 25%;
+    }
+    .item.video {
+        height: auto;
+        padding-top: 0;
+        background-size: cover;
+    }
 }
