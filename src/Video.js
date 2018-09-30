@@ -3,12 +3,12 @@ import './Video.css';
 
 class Video extends Component {
   render() {
-    const { id, title, image } = this.props;
+    const { id, title, image, onClick } = this.props;
     const bgStyle = {
       backgroundImage: `url(${require(`./images/${image}`)}`
     }
     return (
-      <div className="item video" style={bgStyle}>
+      <div className="item video" style={bgStyle} onClick={() => onClick(id)}>
         <span>{title}</span>
       </div>
     );
