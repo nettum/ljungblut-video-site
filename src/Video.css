@@ -12,8 +12,6 @@
 .item.video {
     background-size: cover;
     opacity: .3;
-    font-weight: 700;
-    font-size: 24px;
     cursor: pointer;
 }
 .item.video span {
