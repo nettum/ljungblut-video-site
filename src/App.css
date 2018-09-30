@@ -4,6 +4,7 @@
   flex-wrap: wrap;
 }
 .youtube-wrapper {
+  background: black;
   position: absolute;
   top: 0;
   left: 0;
