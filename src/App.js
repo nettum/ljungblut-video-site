@@ -32,10 +32,23 @@ class App extends Component {
     });
   };
 
+  playNext = () => {
+    const { videoId } = this.state;
+    const videoKey = videos.findIndex(video => video.id === videoId);
+    if (videoKey < videos.length-1) {
+      this.setState({
+        videoId: videos[videoKey+1].id,
+      });
+    } else {
+      this.resetVideoId();
+    }
+  }
+
   renderVideo() {
     const { videoId } = this.state;
     const opts = {
       playerVars: {
+        autoplay: 1,
         controls: 0,
       }
     };
@@ -46,7 +59,7 @@ class App extends Component {
             videoId={videoId}
             onReady={this.onVideoReady}
             onPause={this.resetVideoId}
-            onEnd={this.resetVideoId}
+            onEnd={this.playNext}
             opts={opts}
           />
         </div>
