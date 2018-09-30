@@ -8,7 +8,9 @@ class App extends Component {
   render() {
     return (
       <div className="ljungblut-videos">
+        <div class="item">Ljungblut</div>
         {videos.map(video => <Video key={video.id} {...video} />)}
+        <div class="item">Ikke alle netter er like sorte</div>
       </div>
     );
   }

@@ -1,4 +1,5 @@
 .ljungblut-videos {
-  background: blue;
   height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
 }

@@ -3,10 +3,13 @@ import './Video.css';
 
 class Video extends Component {
   render() {
-    const { title } = this.props;
+    const { id, title, image } = this.props;
+    const bgStyle = {
+      backgroundImage: `url(${require(`./images/${image}`)}`
+    }
     return (
-      <div className="video">
-        {title}
+      <div className="item video" style={bgStyle}>
+        <span>{title}</span>
       </div>
     );
   }
