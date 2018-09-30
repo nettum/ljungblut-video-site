@@ -34,6 +34,11 @@ class App extends Component {
 
   renderVideo() {
     const { videoId } = this.state;
+    const opts = {
+      playerVars: {
+        controls: 0,
+      }
+    };
     return (
       videoId !== null ?
         <div className="youtube-wrapper">
@@ -42,6 +47,7 @@ class App extends Component {
             onReady={this.onVideoReady}
             onPause={this.resetVideoId}
             onEnd={this.resetVideoId}
+            opts={opts}
           />
         </div>
       : null
