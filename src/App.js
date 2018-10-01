@@ -10,7 +10,7 @@ class App extends Component {
     super(props);
     this.state = {
       videoId: null,
-    }
+    };
   }
 
   onVideoReady(event) {
@@ -66,11 +66,12 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="ljungblut-videos">
-        <div className="item"><div>Ljungblut</div></div>
+        <div className="item"><div>Ljungblut< br/>Ikke alle netter er like sorte</div></div>
         {videos.map(video => <Video onClick={this.startVideo} key={video.id} {...video} />)}
-        <div className="item"><div>Ikke alle netter er like sorte</div></div>
+        <div className="item"><div className="end"></div></div>
         {this.renderVideo()}
       </div>
     );
