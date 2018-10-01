@@ -3,41 +3,44 @@
     position: relative;
     background: black;
     color: #5b5b5b;
-    width: 100%;
     transition: all .2s ease-in;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex: 100% 1 0;
+    padding-top: 56.25%;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+.item div {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    user-select: none;
 }
 .item.video {
-    height: 0;
-    padding-top: 56.25%;
     font-weight: 700;
     font-size: 30px;
     color: white;
-    background-size: contain;
-    background-repeat: no-repeat;
     opacity: .3;
     cursor: pointer;
+    background-size: 100% 100%;
 }
-.item.video span {
-    opacity: 0;
-}
-.item.video:hover {
+.item.video:hover, .item.video:active {
     opacity: 1;
 }
-.item.video:hover span {
+.item.video div {
+    opacity: 0;
+}
+.item.video:hover div, .item.video:active div {
     opacity: 1;
 }
 
 @media (min-width: 600px) and (orientation: landscape) {
     .item {
-        flex-basis: 25%;
-    }
-    .item.video {
-        height: auto;
-        padding-top: 0;
-        background-size: cover;
+        flex: 25% 1 0;
+        padding: 0;
     }
 }

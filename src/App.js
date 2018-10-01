@@ -14,19 +14,17 @@ class App extends Component {
   }
 
   onVideoReady(event) {
-    console.log('ready');
     event.target.playVideo();
   }
 
   startVideo = (id) => {
-    console.log('start');
+    window.scrollTo(0, 0);
     this.setState({
       videoId: id,
     });
   };
 
   resetVideoId = () => {
-    console.log('reset');
     this.setState({
       videoId: null,
     });
@@ -70,9 +68,9 @@ class App extends Component {
   render() {
     return (
       <div className="ljungblut-videos">
-        <div className="item">Ljungblut</div>
+        <div className="item"><div>Ljungblut</div></div>
         {videos.map(video => <Video onClick={this.startVideo} key={video.id} {...video} />)}
-        <div className="item">Ikke alle netter er like sorte</div>
+        <div className="item"><div>Ikke alle netter er like sorte</div></div>
         {this.renderVideo()}
       </div>
     );

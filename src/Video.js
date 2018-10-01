@@ -9,7 +9,7 @@ class Video extends Component {
     }
     return (
       <div className="item video" style={bgStyle} onClick={() => onClick(id)}>
-        <span>{title}</span>
+          <div>{title}</div>
       </div>
     );
   }
