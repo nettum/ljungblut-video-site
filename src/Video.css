@@ -43,4 +43,7 @@
         flex: 25% 1 0;
         padding: 0;
     }
+    .item.video {
+        background-size: cover;
+    }
 }
