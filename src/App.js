@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
+
+import Video from './Video';
+import Social from './Social';
+
+import videos from './videos';
 import './App.css';
-import videos from './videos.json';
-import Video from './Video.js';
 
 class App extends Component {
 
@@ -69,9 +72,23 @@ class App extends Component {
 
     return (
       <div className="ljungblut-videos">
-        <div className="item"><div>Ljungblut< br/>Ikke alle netter er like sorte</div></div>
+        <div className="item">
+          <div>Ljungblut< br/>Ikke alle netter er like sorte</div>
+        </div>
         {videos.map(video => <Video onClick={this.startVideo} key={video.id} {...video} />)}
-        <div className="item"><div className="end"></div></div>
+        <div className="item">
+          <div className="end">
+            <a href="https://www.facebook.com/Ljungblut-86549322482/" rel="noopener noreferrer" target="_blank">
+              <Social type="facebook" />
+            </a>
+            <a href="https://www.instagram.com/ljungblut/" rel="noopener noreferrer" target="_blank">
+              <Social type="instagram" />
+            </a>
+            <a href="https://www.youtube.com/user/LjungblutTV/" rel="noopener noreferrer" target="_blank">
+              <Social type="youtube" />
+            </a>
+          </div>
+        </div>
         {this.renderVideo()}
       </div>
     );
