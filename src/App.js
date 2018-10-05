@@ -51,6 +51,7 @@ class App extends Component {
       playerVars: {
         autoplay: 1,
         controls: 0,
+        rel: 0,
       }
     };
     return (
@@ -59,10 +60,12 @@ class App extends Component {
           <YouTube 
             videoId={videoId}
             onReady={this.onVideoReady}
-            onPause={this.resetVideoId}
             onEnd={this.playNext}
             opts={opts}
           />
+          <div className="close" onClick={this.resetVideoId}>
+            <Icon type="close" />
+          </div>
         </div>
       : null
     );
