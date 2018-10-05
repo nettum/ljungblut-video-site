@@ -17,13 +17,13 @@
   height: 99%;
 }
 .youtube-wrapper .close {
-  cursor: pointer;
-}
-.youtube-wrapper svg {
   position: absolute;
   top: 45px;
   right: 20px;
-  z-index: 5;
+  z-index: 5;  
+  cursor: pointer;
+}
+.youtube-wrapper svg {
   width: 50px;
   height: 50px;
   opacity: 0;
@@ -40,4 +40,9 @@
 .end svg:hover .svg-bg {
   transition: all .1s ease-in;
   fill: #ffffff;
+}
+@media (hover: none) {
+  .youtube-wrapper svg {
+    opacity: 1;
+  }
 }
