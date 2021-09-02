@@ -8,7 +8,6 @@ import videos from './videos';
 import './App.css';
 
 const App = () => {
-
   const [ videoId, setVideoId ] = useState(null);
 
   const onVideoReady = e =>  e.target.playVideo();
@@ -39,19 +38,17 @@ const App = () => {
     };
 
     return (
-      videoId !== null ?
-        <div className="youtube-wrapper">
-          <YouTube 
-            videoId={videoId}
-            onReady={onVideoReady}
-            onEnd={playNext}
-            opts={opts}
-          />
-          <div className="close" onClick={resetVideoId}>
-            <Icon type="close" />
-          </div>
+      <div className="youtube-wrapper">
+        <YouTube 
+          videoId={videoId}
+          onReady={onVideoReady}
+          onEnd={playNext}
+          opts={opts}
+        />
+        <div className="close" onClick={resetVideoId}>
+          <Icon type="close" />
         </div>
-      : null
+      </div>
     );
   }
 
@@ -75,7 +72,7 @@ const App = () => {
           <small>For their 4th album, Ljungblut created a musicvideo for each track on the Ikke alle netter er like sorte album. This is a fansite created by <a href="https://internettum.no/" rel="noopener noreferrer" target="_blank">Marius</a> to  collect and show all these videos in the correct order from the album.</small>
         </div>
       </div>
-      {renderVideo()}
+      {videoId && renderVideo()}
     </div>
   );
 }
