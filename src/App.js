@@ -69,7 +69,7 @@ const App = () => {
           <a href="https://www.youtube.com/user/LjungblutTV/" rel="noopener noreferrer" target="_blank">
             <Icon type="youtube" />
           </a>
-          <small>For their 4th album, Ljungblut created a musicvideo for each track on the Ikke alle netter er like sorte album. This is a fansite created by <a href="https://internettum.no/" rel="noopener noreferrer" target="_blank">Marius</a> to  collect and show all these videos in the correct order from the album.</small>
+          <small>For their 4th album, Ljungblut created a musicvideo for each track on the «Ikke alle netter er like sorte» album. This is a fansite created by <a href="https://internettum.no/" rel="noopener noreferrer" target="_blank">Marius</a> to  collect and show all these videos in the correct order from the album.</small>
         </div>
       </div>
       {videoId && renderVideo()}
